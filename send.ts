@@ -31,7 +31,7 @@ const transferTokens = async () => {
     const senderTokenAccount = '7uQ4xzaYNPjWk7yAhHu2TAdfLovv3c21JdCxHXUC67iy'; // Ganti dengan token account pengirim
     const decimals = 9; // Ganti dengan jumlah desimal token Anda
 
-    // Membaca file JSON
+    // Reading JSON
     const filePath = path.join(__dirname, 'recipients.json');
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     const recipients = JSON.parse(fileContent);
@@ -76,10 +76,6 @@ const transferTokens = async () => {
             [],
             amountInUnits
         );
-
-        // const transaction = new Transaction().add(transferIx);
-        // const txHash = await sendAndConfirmTransaction(connection, transaction, [payer]);
-
 
         try {
             const transaction = new Transaction().add(transferIx);
