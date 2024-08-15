@@ -10,7 +10,7 @@ const connection = new Connection('https://api.devnet.solana.com', 'confirmed');
 const secretKey = JSON.parse(fs.readFileSync('../../solana/twannew.json', 'utf8'));
 const payer = Keypair.fromSecretKey(Uint8Array.from(secretKey));
 
-// Fungsi untuk konversi jumlah token
+// Functions for token number conversion
 const convertToTokenUnits = (amount: number, decimals: number): number => {
     return amount * Math.pow(10, decimals);
 };
